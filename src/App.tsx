@@ -1,16 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Forms from './pages/Forms';
-import Mensagem from './pages/Mensagem';
+import { Outlet } from 'react-router';
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Forms />} />
-        <Route path="/mensagem" element={<Mensagem />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }
-
-export default App;
