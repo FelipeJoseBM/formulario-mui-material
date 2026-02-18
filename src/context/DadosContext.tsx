@@ -3,7 +3,7 @@ import type { DadosFormularioType } from '../pages/Fomulario/Formulario.schema';
 
 type DadosContextType = {
   lista: DadosFormularioType[];
-  adicionar: (dado: DadosFormularioType) => void;
+  adicionarLista: (dado: DadosFormularioType) => void;
 };
 
 const DadosContext = createContext<DadosContextType | null>(null);
@@ -11,12 +11,12 @@ const DadosContext = createContext<DadosContextType | null>(null);
 export function DadosProvider({ children }: { children: React.ReactNode }) {
   const [lista, setLista] = useState<DadosFormularioType[]>([]);
 
-  const adicionar = (novo: DadosFormularioType) => {
+  const adicionarLista = (novo: DadosFormularioType) => {
     setLista((prev) => [...prev, novo]);
   };
 
   return (
-    <DadosContext.Provider value={{ lista, adicionar }}>
+    <DadosContext.Provider value={{ lista, adicionarLista }}>
       {children}
     </DadosContext.Provider>
   );

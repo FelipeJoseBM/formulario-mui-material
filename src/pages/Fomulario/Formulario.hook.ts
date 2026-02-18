@@ -9,7 +9,7 @@ import { useDados } from '../../context/DadosContext';
 
 export function useFormulario() {
   const navigate = useNavigate();
-  const { adicionar } = useDados();
+  const { adicionarLista } = useDados();
   const {
     register,
     handleSubmit,
@@ -28,8 +28,8 @@ export function useFormulario() {
   });
 
   const onEnviar = (dado: DadosFormularioType) => {
-    adicionar(dado);
-    navigate('msg', { state: dado });
+    adicionarLista(dado);
+    navigate('/msg', { state: dado });
   };
 
   return {
