@@ -1,15 +1,14 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import { BotaoEnviar, BotaoZerar } from './Formulario.styled';
 import { useFormulario } from './Formulario.hook';
 
 export default function Formulario() {
   const { register, handleSubmit, reset, errors, onEnviar } = useFormulario();
   return (
     <>
-      <Box
+      <Stack
         sx={{ bgcolor: 'lightyellow', p: 4 }}
         component="form"
         onSubmit={handleSubmit(onEnviar)}
@@ -90,14 +89,14 @@ export default function Formulario() {
           </Stack>
         </Stack>
         <Stack spacing={2} direction={'row'}>
-          <Button variant="contained" color="error" onClick={() => reset()}>
+          <BotaoZerar variant="contained" color="error" onClick={() => reset()}>
             Zerar formulário
-          </Button>
-          <Button variant="contained" color="success" type="submit">
+          </BotaoZerar>
+          <BotaoEnviar variant="contained" color="success" type="submit">
             Enviar Formulário
-          </Button>
+          </BotaoEnviar>
         </Stack>
-      </Box>
+      </Stack>
     </>
   );
 }

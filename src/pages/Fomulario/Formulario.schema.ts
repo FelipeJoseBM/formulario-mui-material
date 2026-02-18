@@ -9,4 +9,4 @@ export const DadosFormularioSchema = z.object({
   data: z.string().nonempty('A data é um campo é obrigatório'),
 });
 
-export type DadosFormulario = z.infer<typeof DadosFormularioSchema>;
+export type DadosFormularioType = z.infer<typeof DadosFormularioSchema>;

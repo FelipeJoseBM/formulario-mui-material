@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router';
+import { DadosProvider } from './context/DadosContext';
 
 import App from './App';
 import Forms from './pages/Fomulario/Formulario';
@@ -19,6 +20,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <DadosProvider>
+      <RouterProvider router={router} />
+    </DadosProvider>
   </React.StrictMode>
 );
